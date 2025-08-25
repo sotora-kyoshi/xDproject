@@ -3,22 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Sotora Profile</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+
+  <!-- JS -->
+  <script src="lib/jquery.min.js"></script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script defer src="assets/js/script.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/modules/api.js"></script>
+  <script defer src="js/modules/ui.js"></script>
 </head>
 <body>
-  <div class="profile-container">
-    <img id="avatar" src="" alt="Avatar">
+  <header>
+    <nav class="navbar">
+      <h1>Sotora Profile</h1>
+    </nav>
+  </header>
+
+  <main class="profile-container">
+    <img id="avatar" src="assets/images/avatar.png" alt="Avatar">
     <h1 id="display_name">Loading...</h1>
     <p id="bio">Please wait...</p>
 
     <div id="links"></div>
 
     <button id="refresh">Refresh Profile</button>
-
     <div class="alert" id="error_alert" style="display:none;">Error fetching profile!</div>
-  </div>
+  </main>
 
   <hr>
   <footer>© 2025 Shiro's Profile</footer>
