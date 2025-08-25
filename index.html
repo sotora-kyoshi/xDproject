@@ -8,10 +8,19 @@
   <script defer src="assets/js/script.js"></script>
 </head>
 <body>
-  <img id="avatar" src="" alt="Avatar">
-  <h1 id="display_name">Loading...</h1>
-  <p id="bio">Please wait...</p>
+  <div class="profile-container">
+    <img id="avatar" src="" alt="Avatar">
+    <h1 id="display_name">Loading...</h1>
+    <p id="bio">Please wait...</p>
 
-  <div id="links"></div>
+    <div id="links"></div>
+
+    <button id="refresh">Refresh Profile</button>
+
+    <div class="alert" id="error_alert" style="display:none;">Error fetching profile!</div>
+  </div>
+
+  <hr>
+  <footer>© 2025 Shiro's Profile</footer>
 </body>
 </html>
