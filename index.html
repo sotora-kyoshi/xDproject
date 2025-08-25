@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebTest#1</title>
+  <title>Sotora Profile</title>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script defer src="assets/js/script.js"></script>
   <style>
     body {
-      font-family: monospace;
-      background: #8b5e5e; /* coklat kemerahan */
-      color: #f8f8f8;
-      margin: 20px;
-    }
-    header {
+      background: #5a2a2a;
+      color: #f0e6e6;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 10px;
+      padding: 2rem;
     }
-    nav {
-      margin: 15px 0;
-      padding: 8px;
-      background: rgba(0,0,0,0.2);
-      text-align: center;
+    #avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 1rem;
     }
-    nav a {
-      margin: 0 12px;
+    #links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #ffeaea;
     }
-    .box {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin: 20px auto;
-      background: rgba(0,0,0,0.2);
-      max-width: 600px;
+    #links a:hover {
+      background: #fff;
+      color: #5a2a2a;
     }
-    button {
-      padding: 8px 14px;
+  </style>
+</head>
+<body>
+  <img id="avatar" src="" alt="Avatar">
+  <h1 id="display_name">Loading...</h1>
+  <p id="bio">Please wait...</p>
+
+  <div id="links"></div>
+</body>
+</html>      padding: 8px 14px;
       margin-top: 10px;
       cursor: pointer;
       background: #b84c4c;
