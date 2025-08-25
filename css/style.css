@@ -8,7 +8,7 @@ body {
 }
 
 .profile-container {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -30,12 +30,6 @@ button {
 
 button:hover {
   background: #a33d3d;
-}
-
-hr {
-  margin: 20px 0;
-  border: none;
-  border-top: 1px solid #ddd;
 }
 
 .alert {
