@@ -10,33 +10,44 @@
 
 body {
     font-family: 'Manrope', sans-serif;
-    background: #4C2A85; /* Warna ungu solid sesuai desain */
+    background: #4C2A85;
     color: #333;
-    padding: 70px 20px; /* Posisi kembali ke atas dengan padding */
+    padding: 70px 20px;
 }
 
 .container {
     max-width: 800px;
     width: 100%;
-    margin: 0 auto; /* Sentralisasi horizontal */
+    margin: 0 auto;
 }
 
-/* Gaya Kartu Profil Utama */
+/* Kartu Profil Utama */
 .profile-header {
-    background-color: #F3F4F6; /* Warna abu-abu terang */
+    background-color: #F3F4F6;
     border-radius: 20px;
-    padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
+    padding: 30px;
 }
 
-/* Gaya Umum (dipakai di kedua versi) */
+/* Banner */
+.banner {
+    height: 150px;
+    background-image: url('../assets/images/banner.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: none; /* Sembunyikan banner sesuai desain terakhir, hapus baris ini jika ingin menampilkannya */
+}
+
+/* Gaya Umum */
 .profile-picture {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    flex-shrink: 0; /* Mencegah gambar menyusut */
+    flex-shrink: 0;
 }
 
 .profile-picture img {
@@ -52,7 +63,7 @@ body {
 
 .subtitle {
     font-size: 1.1rem;
-    color: #6B7280; /* Warna abu-abu untuk subtitle */
+    color: #6B7280;
 }
 
 .verified-badge {
@@ -73,78 +84,67 @@ body {
     color: #4C2A85;
 }
 
-/* ================================================= */
-/* ATURAN TAMPILAN: MOBILE-FIRST                     */
-/* Secara default, kita tampilkan versi mobile.      */
-/* ================================================= */
+/* ======================================================== */
+/* ATURAN TAMPILAN DESKTOP (DEFAULT)                        */
+/* ======================================================== */
 
-.desktop-view {
-    display: none; /* Sembunyikan versi desktop di layar kecil */
-}
-
-.mobile-view {
+.profile-header {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    text-align: center;
 }
 
-.mobile-view .mobile-top-info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between; /* Nama kiri, sosial kanan */
-    align-items: center;
-    padding: 0 10px;
+.mobile-separator,
+.social-text {
+    display: none;
 }
 
-.mobile-view .social-text {
-    font-size: 1rem;
-    color: #6B7280;
+.profile-header .profile-picture {
+    margin-right: 25px;
 }
 
-.mobile-view .separator {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #D1D5DB;
-    margin: 20px 0;
+.profile-header .main-name {
+    margin-bottom: 5px;
 }
 
-.mobile-view .profile-picture {
-    margin-bottom: 15px;
-}
-
-.mobile-view .main-name {
-    margin-bottom: 15px;
+.profile-header .social-icons {
+    margin-left: auto;
 }
 
 
-/* ================================================= */
-/* ATURAN TAMPILAN: DESKTOP                          */
-/* Jika layar 768px atau lebih besar, balik aturannya.*/
-/* ================================================= */
+/* ======================================================== */
+/* ATURAN TAMPILAN MOBILE                                   */
+/* ======================================================== */
 
-@media (min-width: 768px) {
-    .desktop-view {
+@media (max-width: 768px) {
+    .profile-header {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start; /* DIGANTI: Rata kiri */
+        text-align: left;        /* DIGANTI: Teks rata kiri */
+    }
+
+    /* Mengatur ulang urutan elemen untuk mobile */
+    .subtitle { order: 1; }
+    .social-text { order: 2; display: block; }
+    .mobile-separator { order: 3; display: block; width: 100%; border: none; border-top: 1px solid #D1D5DB; margin: 20px 0; }
+    .profile-picture { order: 4; margin-right: 0; margin-bottom: 15px; }
+    .main-name { order: 5; margin-bottom: 15px; }
+    .social-icons { order: 6; margin-left: 0; }
+
+    /* Atur tampilan khusus mobile */
+    .profile-header {
+        padding: 20px;
     }
     
-    .desktop-view .profile-info {
-        margin-left: 25px; /* Jarak antara foto dan teks nama */
-    }
-
-    .desktop-view .social-icons {
-        margin-left: auto; /* Mendorong ikon sosial ke paling kanan */
-    }
-
-    .desktop-view .main-name {
-        margin-bottom: 5px;
-    }
-
-    .mobile-view {
-        display: none; /* Sembunyikan versi mobile */
+    /* Pindah ke kiri atas, bukan menyebar */
+    .profile-header > div:first-of-type {
+        display: block; /* Bukan flex lagi */
+        width: 100%;
+        padding: 0;
     }
 }
+
 
 /* Kartu "Tentang Saya" */
 .about-me {
