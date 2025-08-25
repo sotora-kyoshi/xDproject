@@ -3,38 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Sotora Profile</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script defer src="assets/js/script.js"></script>
-  <style>
-    body {
-      background: #5a2a2a;
-      color: #f0e6e6;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
-    }
-    #avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 1rem;
-    }
-    #links a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid #fff;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-    #links a:hover {
-      background: #fff;
-      color: #5a2a2a;
-    }
-  </style>
 </head>
 <body>
+  <img id="avatar" src="" alt="Avatar">
+  <h1 id="display_name">Loading...</h1>
+  <p id="bio">Please wait...</p>
+
+  <div id="links"></div>
+</body>
+</html><body>
   <img id="avatar" src="" alt="Avatar">
   <h1 id="display_name">Loading...</h1>
   <p id="bio">Please wait...</p>
