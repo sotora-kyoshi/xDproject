@@ -10,58 +10,36 @@
 
 body {
     font-family: 'Manrope', sans-serif;
-    background: linear-gradient(160deg, #52057b, #892cdc, #bc6ff1);
+    background: #4C2A85; /* Warna ungu solid sesuai desain */
     color: #333;
     min-height: 100vh;
-    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .container {
     max-width: 800px;
     width: 100%;
-    margin: 0 auto;
 }
 
-/* Header Profil (Kartu Putih) */
+/* Gaya Kartu Profil Utama */
 .profile-header {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    position: relative;
-    margin-bottom: 80px;
+    background-color: #F3F4F6; /* Warna abu-abu terang */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 
-/* Banner di dalam Header */
-.banner {
-    height: 200px;
-    background-color: #f0f0f0;
-    background-image: url('../assets/images/banner.png');
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-/* Kontainer yang membungkus foto, nama, dan sosmed */
-.profile-container {
-    display: flex;
-    align-items: center; /* DIGANTI: Lebih rapi di tengah secara vertikal */
-    padding: 0 30px 30px; /* DIGANTI: Padding bawah ditambah agar container lebih panjang */
-    position: relative;
-}
-
-/* Foto Profil Bulat */
+/* Gaya Umum (dipakai di kedua versi) */
 .profile-picture {
-    position: absolute; 
-    transform: translateY(-50%); 
-    top: 0;
-    left: 30px;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    flex-shrink: 0; /* Mencegah gambar menyusut */
 }
 
 .profile-picture img {
@@ -70,105 +48,119 @@ body {
     object-fit: cover;
 }
 
-/* Detail Profil (Nama dan centang) */
-.profile-details {
-    margin-left: 170px;
+.main-name {
+    font-size: 1.8rem;
+    font-weight: 800;
 }
 
-.name {
-    font-size: 2rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
+.subtitle {
+    font-size: 1.1rem;
+    color: #6B7280; /* Warna abu-abu untuk subtitle */
 }
 
 .verified-badge {
     color: #1DA1F2;
-    font-size: 1.5rem;
-    margin-left: 8px;
-    position: relative;
-    top: 2px; /* Disesuaikan agar lebih pas */
-}
-
-/* Ikon Sosial Media */
-.social-icons {
-    margin-left: auto;
-    display: flex;
-    gap: 15px;
+    font-size: 1.2rem;
+    margin-left: 5px;
 }
 
 .social-icons a {
-    color: #555;
+    color: #4B5563;
     font-size: 1.5rem;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    margin: 0 8px;
+    transition: color 0.2s;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2);
-    color: #8e2de2;
+    color: #4C2A85;
 }
 
-/* Konten Utama (di bawah header) */
-.main-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    color: #333;
+/* ================================================= */
+/* ATURAN TAMPILAN: MOBILE-FIRST                     */
+/* Secara default, kita tampilkan versi mobile.      */
+/* ================================================= */
+
+.desktop-view {
+    display: none; /* Sembunyikan versi desktop di layar kecil */
 }
 
-.main-content h2 {
+.mobile-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mobile-view .mobile-top-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Nama kiri, sosial kanan */
+    align-items: center;
+    padding: 0 10px;
+}
+
+.mobile-view .social-text {
+    font-size: 1rem;
+    color: #6B7280;
+}
+
+.mobile-view .separator {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #D1D5DB;
+    margin: 20px 0;
+}
+
+.mobile-view .profile-picture {
     margin-bottom: 15px;
-    color: #52057b;
 }
 
-/* =============================================== */
-/* MEDIA QUERY UNTUK RESPONSIVENESS (MOBILE)       */
-/* =============================================== */
+.mobile-view .main-name {
+    margin-bottom: 15px;
+}
 
-@media (max-width: 768px) {
-    body {
-        padding: 40px 15px;
-    }
 
-    .banner {
-        height: 120px; /* DITAMBAHKAN: Mengurangi tinggi banner di mobile */
-    }
+/* ================================================= */
+/* ATURAN TAMPILAN: DESKTOP                          */
+/* Jika layar 768px atau lebih besar, balik aturannya.*/
+/* ================================================= */
 
-    .profile-header {
-        padding-bottom: 20px; 
-        margin-bottom: 100px;
-    }
-
-    .profile-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 15px;
-        text-align: left;
+@media (min-width: 768px) {
+    .desktop-view {
+        display: flex; /* Tampilkan versi desktop */
+        align-items: center;
+        gap: 25px; /* Jarak antar elemen */
     }
 
-    .profile-picture {
-        width: 120px;
-        height: 120px;
-        position: relative;
-        transform: translateY(-50%);
-        left: auto;
-        margin-bottom: 10px;
+    .mobile-view {
+        display: none; /* Sembunyikan versi mobile */
     }
 
-    .profile-details {
-        margin-left: 0;
-        order: 2;
-    }
-    
-    .name {
-        font-size: 1.8rem;
+    .desktop-view .profile-info {
+        flex-grow: 1; /* Biarkan info nama mengambil sisa ruang */
     }
 
-    .social-icons {
-        margin-left: 0;
-        margin-top: 15px;
-        order: 3;
+    .desktop-view .main-name {
+        margin-bottom: 5px;
     }
+}
+
+/* Kartu "Tentang Saya" */
+.about-me {
+    background-color: #F3F4F6;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h2 {
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #4C2A85;
+}
+
+.about-me p {
+    color: #4B5563;
+    line-height: 1.6;
 }
