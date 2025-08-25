@@ -5,6 +5,9 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 async function loadProfile() {
+  const errorAlert = document.getElementById("error_alert");
+  errorAlert.style.display = "none";
+
   const { data, error } = await client
     .from("site_profile")
     .select("*")
@@ -12,6 +15,7 @@ async function loadProfile() {
 
   if (error) {
     console.error("Error fetching profile:", error);
+    errorAlert.style.display = "block";
     return;
   }
 
@@ -39,3 +43,6 @@ async function loadProfile() {
 
 // Jalankan saat halaman sudah siap
 document.addEventListener("DOMContentLoaded", loadProfile);
+
+// Tombol refresh profile
+document.getElementById("refresh").addEventListener("click", loadProfile);
