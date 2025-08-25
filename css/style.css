@@ -12,16 +12,13 @@ body {
     font-family: 'Manrope', sans-serif;
     background: #4C2A85; /* Warna ungu solid sesuai desain */
     color: #333;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 70px 20px; /* Posisi kembali ke atas dengan padding */
 }
 
 .container {
     max-width: 800px;
     width: 100%;
+    margin: 0 auto; /* Sentralisasi horizontal */
 }
 
 /* Gaya Kartu Profil Utama */
@@ -128,21 +125,24 @@ body {
 
 @media (min-width: 768px) {
     .desktop-view {
-        display: flex; /* Tampilkan versi desktop */
+        display: flex;
         align-items: center;
-        gap: 25px; /* Jarak antar elemen */
     }
-
-    .mobile-view {
-        display: none; /* Sembunyikan versi mobile */
-    }
-
+    
     .desktop-view .profile-info {
-        flex-grow: 1; /* Biarkan info nama mengambil sisa ruang */
+        margin-left: 25px; /* Jarak antara foto dan teks nama */
+    }
+
+    .desktop-view .social-icons {
+        margin-left: auto; /* Mendorong ikon sosial ke paling kanan */
     }
 
     .desktop-view .main-name {
         margin-bottom: 5px;
+    }
+
+    .mobile-view {
+        display: none; /* Sembunyikan versi mobile */
     }
 }
 
