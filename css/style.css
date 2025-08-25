@@ -45,8 +45,8 @@ body {
 /* Kontainer yang membungkus foto, nama, dan sosmed */
 .profile-container {
     display: flex;
-    align-items: flex-end;
-    padding: 0 30px 20px;
+    align-items: center; /* DIGANTI: Lebih rapi di tengah secara vertikal */
+    padding: 0 30px 30px; /* DIGANTI: Padding bawah ditambah agar container lebih panjang */
     position: relative;
 }
 
@@ -85,9 +85,9 @@ body {
 .verified-badge {
     color: #1DA1F2;
     font-size: 1.5rem;
-    margin-left: 8px; /* Diperbaiki: Sedikit lebih dekat */
-    position: relative; /* Ditambahkan */
-    top: 1px; /* Ditambahkan: Sedikit turun agar sejajar */
+    margin-left: 8px;
+    position: relative;
+    top: 2px; /* Disesuaikan agar lebih pas */
 }
 
 /* Ikon Sosial Media */
@@ -130,6 +130,10 @@ body {
 @media (max-width: 768px) {
     body {
         padding: 40px 15px;
+    }
+
+    .banner {
+        height: 120px; /* DITAMBAHKAN: Mengurangi tinggi banner di mobile */
     }
 
     .profile-header {
