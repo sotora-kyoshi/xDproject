@@ -2,40 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sotora Profile</title>
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="lib/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components/navbar.css">
-  <link rel="stylesheet" href="css/components/footer.css">
-
-  <!-- JS -->
-  <script src="lib/jquery.min.js"></script>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script defer src="js/script.js"></script>
-  <script defer src="js/modules/api.js"></script>
-  <script defer src="js/modules/ui.js"></script>
+  <title>Sotora's Profile</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@supabase/supabase-js@2" defer></script>
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <h1>Sotora Profile</h1>
-    </nav>
-  </header>
-
-  <main class="profile-container">
-    <img id="avatar" src="assets/images/avatar.png" alt="Avatar">
-    <h1 id="display_name">Loading...</h1>
-    <p id="bio">Please wait...</p>
-
-    <div id="links"></div>
-
-    <button id="refresh">Refresh Profile</button>
-    <div class="alert" id="error_alert" style="display:none;">Error fetching profile!</div>
-  </main>
-
-  <hr>
-  <footer>© 2025 Shiro's Profile</footer>
+  <div class="card">
+    <img src="" alt="Banner" class="banner" id="banner">
+    <div class="card-content">
+      <div class="avatar-container">
+        <img src="" alt="Avatar" class="avatar" id="avatar">
+        <div class="name-container">
+          <span class="name" id="name"></span>
+          <span class="verified" id="verified">✔️</span>
+        </div>
+      </div>
+      <div class="social-icons" id="social-icons"></div>
+      <hr>
+      <p class="bio" id="bio"></p>
+    </div>
+  </div>
 </body>
 </html>
