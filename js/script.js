@@ -11,7 +11,7 @@ async function loadProfile() {
   const { data, error } = await client
     .from("site_profile")
     .select("*")
-    .single(); // karena cuma 1 profile admin
+    .single();
 
   if (error) {
     console.error("Error fetching profile:", error);
@@ -19,7 +19,6 @@ async function loadProfile() {
     return;
   }
 
-  // Update elemen HTML dengan data dari Supabase
   document.getElementById("display_name").textContent = data.display_name;
   document.getElementById("bio").textContent = data.bio;
 
@@ -27,7 +26,6 @@ async function loadProfile() {
     document.getElementById("avatar").src = data.avatar_url;
   }
 
-  // Render links
   const linksContainer = document.getElementById("links");
   linksContainer.innerHTML = "";
   data.links.forEach(link => {
@@ -41,8 +39,5 @@ async function loadProfile() {
   });
 }
 
-// Jalankan saat halaman sudah siap
 document.addEventListener("DOMContentLoaded", loadProfile);
-
-// Tombol refresh profile
 document.getElementById("refresh").addEventListener("click", loadProfile);
