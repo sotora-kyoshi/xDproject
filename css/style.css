@@ -13,14 +13,13 @@ body {
     background: linear-gradient(160deg, #52057b, #892cdc, #bc6ff1);
     color: #333;
     min-height: 100vh;
-    /* Memberi ruang 70px di atas & bawah, 20px di kiri & kanan */
     padding: 70px 20px;
 }
 
 .container {
     max-width: 800px;
     width: 100%;
-    margin: 0 auto; /* Membuat container di tengah secara horizontal */
+    margin: 0 auto;
 }
 
 /* Header Profil (Kartu Putih) */
@@ -36,9 +35,8 @@ body {
 .banner {
     height: 200px;
     background-color: #f0f0f0;
-    /* Path sudah disesuaikan dengan struktur file kamu */
     background-image: url('../assets/images/banner.png');
-    background-size: cover; /* Menjaga rasio & zoom-to-fill */
+    background-size: cover;
     background-position: center;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -69,12 +67,12 @@ body {
 .profile-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Menjaga rasio 1:1 & zoom-to-fill */
+    object-fit: cover;
 }
 
 /* Detail Profil (Nama dan centang) */
 .profile-details {
-    margin-left: 170px; 
+    margin-left: 170px;
 }
 
 .name {
@@ -87,7 +85,9 @@ body {
 .verified-badge {
     color: #1DA1F2;
     font-size: 1.5rem;
-    margin-left: 10px;
+    margin-left: 8px; /* Diperbaiki: Sedikit lebih dekat */
+    position: relative; /* Ditambahkan */
+    top: 1px; /* Ditambahkan: Sedikit turun agar sejajar */
 }
 
 /* Ikon Sosial Media */
@@ -129,7 +129,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding: 40px 15px; /* Kurangi padding di mobile */
+        padding: 40px 15px;
     }
 
     .profile-header {
@@ -139,12 +139,14 @@ body {
 
     .profile-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         padding: 0 15px;
-        text-align: center;
+        text-align: left;
     }
 
     .profile-picture {
+        width: 120px;
+        height: 120px;
         position: relative;
         transform: translateY(-50%);
         left: auto;
@@ -165,5 +167,4 @@ body {
         margin-top: 15px;
         order: 3;
     }
-    }
-    
+}
